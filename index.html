@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ViralX — Product launch videos engineered to go viral</title>
+  <meta name="description" content="ViralX is the AI-powered launch studio for product launch videos. Brief to cinematic launch film, plus AI video, 3D product renders, reels and personal branding — in every format." />
+  <meta name="theme-color" content="#07050a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23ff2d3d' rx='22' width='100' height='100'/><text x='50' y='67' font-size='44' font-weight='900' fill='white' text-anchor='middle' font-family='Arial Black'>VX</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <!-- intro loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-mark"><span class="vx">VX</span><span>ViralX</span></div>
+    <div class="loader-count"><span id="loaderNum">0</span>%</div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+  </div>
+
+  <!-- background layers -->
+  <div class="nebula" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="announce">
+    <span class="spark">✦</span> Introducing <b>LaunchOS</b>: one brief, a full launch campaign in every format
+    <a href="#engine">See how →</a>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="ViralX home"><span class="vx">VX</span><span>ViralX</span></a>
+    <nav class="nav-links">
+      <a href="#engine">LaunchOS</a>
+      <a href="#launch">Process</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#vex">Ask Vex <span class="tag">AI</span></a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm magnetic" href="#work">Showreel</a>
+      <a class="btn btn-primary btn-sm magnetic" href="#contact">Book a call</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1 · HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <div class="pill reveal-up"><span class="pulse"></span> AI launch studio · product launch videos</div>
+        <h1 class="hero-title">
+          <span class="line"><span>Launch videos</span></span>
+          <span class="line"><span>engineered to go <em class="serif grad-text">viral.</em>
+          </span></span>
+        </h1>
+        <p class="hero-sub reveal-up">From one brief to a cinematic launch film, scroll-stopping reels, 3D product renders and ad cuts — <b>built for the 72 hours that decide your launch.</b></p>
+        <div class="cta-row reveal-up">
+          <a class="btn btn-primary magnetic" href="#contact">Start your launch</a>
+          <a class="btn btn-ghost magnetic" href="#work"><span class="play-dot"></span> Watch the showreel</a>
+        </div>
+      </div>
+      <div class="hero-chip glass" id="heroChip"><span class="live"></span> Now launching: <b id="heroProduct">Smartphone</b></div>
+      <a class="scroll-hint" href="#engine"><span>Scroll to launch</span><i></i></a>
+    </section>
+
+    <!-- 2 · LAUNCHOS ENGINE (3D product sits on the right) -->
+    <section class="engine" id="engine">
+      <div class="engine-card glass">
+        <p class="eyebrow">Releasing</p>
+        <h2 class="engine-name" data-text="LaunchOS">LaunchOS</h2>
+        <p class="engine-tag"><em>Our flagship AI + human pipeline for</em><br /><em>product launch films</em></p>
+        <div class="spec-grid">
+          <div><h3>Cinema quality</h3><p>4K masters, 24 fps grade</p></div>
+          <div><h3>5–7 days</h3><p>Brief to master delivery</p></div>
+          <div><h3>Every format</h3><p>9:16 · 1:1 · 16:9 cuts</p></div>
+          <div><h3>AI + crafted</h3><p>Human-directed AI shots</p></div>
+        </div>
+        <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Product category">
+          <button role="tab" data-cat="phone" class="on">Gadget</button>
+          <button role="tab" data-cat="bottle">Beauty</button>
+          <button role="tab" data-cat="buds">Audio</button>
+          <button role="tab" data-cat="can">Beverage</button>
+        </div>
+        <p class="muted small">Pick a category and watch the launch scene rebuild around it.</p>
+      </div>
+      <div class="engine-label" id="engineLabel"><span class="mono">RENDER</span> <b id="engineCat">Gadget launch</b> · real-time 3D</div>
+    </section>
+
+    <!-- 3 · LAUNCH SEQUENCE (pinned, 3D) -->
+    <section class="launch" id="launch">
+      <div class="launch-pin">
+        <div class="launch-head">
+          <p class="eyebrow">Launch sequence</p>
+          <h2>From brief to <em class="serif grad-text">liftoff.</em></h2>
+        </div>
+        <ol class="launch-steps" id="launchSteps">
+          <li><span class="n">01</span><div><b>Hook &amp; concept</b><small>Scene-by-scene script with dialogue and time-codes</small></div></li>
+          <li><span class="n">02</span><div><b>Look &amp; storyboard</b><small>AI engine selection and visual tests</small></div></li>
+          <li><span class="n">03</span><div><b>AI production</b><small>Motion tests and multi-variant generation</small></div></li>
+          <li><span class="n">04</span><div><b>Post &amp; launch</b><small>VFX, grade, sound — exported for every platform</small></div></li>
+        </ol>
+        <div class="countdown" id="countdown">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="track" /><circle cx="60" cy="60" r="54" class="bar" id="cdBar" /></svg>
+          <div class="cd-text"><small>T-minus</small><b id="cdNum">04</b></div>
+        </div>
+        <div class="launch-live glass" id="launchLive"><span class="live"></span> LIVE — your launch is out in the world</div>
+      </div>
+    </section>
+
+    <!-- 4 · MISSION -->
+    <section class="mission" id="mission">
+      <p class="eyebrow">Viral by design</p>
+      <h2 class="mission-big" id="missionText">ViralX exists to make every product launch impossible to scroll past.</h2>
+      <div class="mission-cols">
+        <p>We are directors, editors, motion designers and AI engineers building one thing: launch films that earn the first second, hold the next fifteen and move people to act.</p>
+        <p>Our pipeline blends generative video, 3D and classic craft — script, storyboard, grade, sound — so you get cinema-level launch content at the speed the internet moves.</p>
+      </div>
+    </section>
+
+    <!-- 5 · FRAME TUNNEL (pinned, 3D) -->
+    <section class="tunnel" id="tunnel">
+      <div class="tunnel-pin">
+        <div class="tunnel-text tt1"><p class="eyebrow">Inside the edit</p><h2>Every frame <em class="serif grad-text">engineered</em><br />for the scroll.</h2></div>
+        <div class="tunnel-chips" id="tunnelChips">
+          <span class="glass" style="--x:12%;--y:22%">⚡ Hook in the first second</span>
+          <span class="glass" style="--x:70%;--y:30%">🔊 Sound-on &amp; sound-off cuts</span>
+          <span class="glass" style="--x:18%;--y:70%">💬 Burned-in kinetic captions</span>
+          <span class="glass" style="--x:66%;--y:74%">📐 9:16 · 1:1 · 16:9 masters</span>
+        </div>
+        <div class="tunnel-text tt2"><p class="eyebrow">The payoff</p><h2>Your product, <em class="serif">center stage.</em></h2></div>
+      </div>
+    </section>
+
+    <!-- 6 · WORK (sticky stacking case studies) -->
+    <section class="work" id="work">
+      <div class="work-head">
+        <p class="eyebrow">Featured work</p>
+        <h2 class="split">Stories that <em class="serif grad-text">launch</em> brands.</h2>
+      </div>
+      <div class="work-ticker" aria-hidden="true">
+        <div class="wt-track"><span>Commercial</span><i>✦</i><span>Launch film</span><i>✦</i><span>Storyboard</span><i>✦</i><span>3D product</span><i>✦</i><span>Commercial</span><i>✦</i><span>Launch film</span><i>✦</i><span>Storyboard</span><i>✦</i><span>3D product</span><i>✦</i></div>
+      </div>
+      <div class="stack" id="stack">
+        <article class="scard" style="--i:0">
+          <div class="scard-media">
+            <img class="sc-img" src="https://i.ytimg.com/vi/fIbDWDh6aYw/maxresdefault.jpg" alt="Hampton — The Lonely Journey commercial still" loading="lazy" />
+            <div class="sc-scan"></div>
+            <div class="sc-bars"><i></i><i></i></div>
+            <a class="play-big" href="https://www.youtube.com/watch?v=fIbDWDh6aYw" target="_blank" rel="noopener" aria-label="Watch Hampton — The Lonely Journey on YouTube"></a>
+            <span class="sc-tc mono">● REC &nbsp;00:00:<b class="tc-num">00</b>:00</span>
+          </div>
+          <div class="scard-meta">
+            <span class="sc-index mono">01 / 03</span>
+            <span class="client">Hampton · Commercial</span>
+            <h3>The Lonely Journey</h3>
+            <p>A narrative commercial on the isolation startup founders face — and the relief of finding your tribe in Hampton's community.</p>
+            <dl class="sc-facts">
+              <div><dt>Industry</dt><dd>Community platform</dd></div>
+              <div><dt>Style</dt><dd>Narrative drama</dd></div>
+              <div><dt>Tone</dt><dd>Emotional journey</dd></div>
+              <div><dt>Format</dt><dd>Digital commercial</dd></div>
+            </dl>
+            <a class="btn btn-ghost magnetic" href="https://www.youtube.com/watch?v=fIbDWDh6aYw" target="_blank" rel="noopener">Watch the story →</a>
+          </div>
+        </article>
+        <article class="scard" style="--i:1">
+          <div class="scard-media sc-reel">
+            <div class="sc-glow"></div>
+            <div class="sc-phone"><video src="assets/reel.mp4" poster="assets/reel-poster.jpg" muted loop playsinline preload="none"></video></div>
+            <span class="sc-chip c1 glass">9:16 · 15s loop</span>
+            <span class="sc-chip c2 glass">3D product renders</span>
+            <span class="sc-chip c3 glass">Kinetic type</span>
+          </div>
+          <div class="scard-meta">
+            <span class="sc-index mono">02 / 03</span>
+            <span class="client">ViralX · Studio launch reel</span>
+            <h3>Launch day, engineered.</h3>
+            <p>Our own launch reel: a countdown cold open, real-time 3D product renders, a category cycle and a seamless loop — built in-house, start to finish.</p>
+            <dl class="sc-facts">
+              <div><dt>Format</dt><dd>9:16 vertical</dd></div>
+              <div><dt>Length</dt><dd>15s seamless loop</dd></div>
+              <div><dt>Craft</dt><dd>3D + motion design</dd></div>
+              <div><dt>Delivery</dt><dd>Reel · site hero</dd></div>
+            </dl>
+            <a class="btn btn-ghost magnetic" href="#vex">See it in the feed →</a>
+          </div>
+        </article>
+        <article class="scard" style="--i:2">
+          <div class="scard-media sc-board">
+            <img class="sc-img" src="assets/storyboard.avif" alt="Grid of AI-generated storyboard frames" loading="lazy" />
+            <div class="sb-box b1"><span>SC 03 · selected</span></div>
+            <div class="sb-box b2"><span>alt look</span></div>
+            <div class="sb-box b3"><span>hero frame</span></div>
+          </div>
+          <div class="scard-meta">
+            <span class="sc-index mono">03 / 03</span>
+            <span class="client">Behind the scenes</span>
+            <h3>The storyboard darkroom</h3>
+            <p>Diverse scenarios, characters and styles — every frame explored, compared and chosen before a single shot is locked.</p>
+            <dl class="sc-facts">
+              <div><dt>Stage</dt><dd>Look &amp; storyboard</dd></div>
+              <div><dt>Output</dt><dd>Style frames</dd></div>
+              <div><dt>Engines</dt><dd>AI + 3D</dd></div>
+              <div><dt>Rounds</dt><dd>Multi-variant</dd></div>
+            </dl>
+            <a class="btn btn-ghost magnetic" href="#process">See the process →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7 · SERVICES (pinned coverflow) -->
+    <section class="services" id="services">
+      <div class="gallery-pin">
+        <div class="svc-ghost" aria-hidden="true">SERVICES · SERVICES · SERVICES</div>
+        <div class="gallery-head">
+          <div>
+            <p class="eyebrow">One studio · every launch asset</p>
+            <h2>Launch films first. <em class="serif grad-text">Everything</em> else too.</h2>
+          </div>
+          <div class="svc-count mono"><b id="svcNow">01</b> / 08</div>
+        </div>
+        <div class="track" id="track">
+          <article class="svc">
+            <div class="svc-art art-launch"><img src="assets/frames/f_3.9.jpg" alt="" loading="lazy" /><span class="rec mono">● REC</span><span class="tcode mono">00:00:03:24</span><i class="lb t"></i><i class="lb b"></i></div>
+            <span class="svc-n mono">01 · Flagship</span><h3>Product launch films</h3><p>The hero film for launch day — concept, script, AI + 3D production, grade and sound.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-ai">
+              <div class="ai-grid"><img src="assets/cards/card-03.webp" alt="" loading="lazy" /><img src="assets/cards/card-01.webp" alt="" loading="lazy" /><img src="assets/cards/card-06.webp" alt="" loading="lazy" /><img src="assets/cards/card-04.webp" alt="" loading="lazy" /></div>
+              <div class="ai-prompt mono"><span class="typed">a can of VOLT bursting into light, 4K</span><i></i></div>
+            </div>
+            <span class="svc-n mono">02</span><h3>AI video generation</h3><p>Generative shots, worlds and characters — directed like a real production.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-3d"><div class="turn"><img src="assets/products/product-can-hero.webp" alt="" loading="lazy" /></div><i class="floor"></i><span class="tag mono">RENDER · 4K</span></div>
+            <span class="svc-n mono">03</span><h3>3D product renders</h3><p>Photoreal hero renders, exploded views and turntables of your product.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-reels"><img src="assets/cards/card-01.webp" alt="" loading="lazy" /><img src="assets/cards/card-02.webp" alt="" loading="lazy" /><img src="assets/cards/card-07.webp" alt="" loading="lazy" /></div>
+            <span class="svc-n mono">04</span><h3>Reels &amp; Shorts</h3><p>Thumb-stopping vertical edits, delivered in batches for every feed.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-brand"><div class="creator"><i class="head"></i><i class="body"></i></div><span class="bubble b1">3 things I learned launching</span><span class="bubble b2">Founder POV · ep. 04</span><span class="rec mono">● LIVE</span></div>
+            <span class="svc-n mono">05</span><h3>Personal branding</h3><p>Founder-led content that builds an audience before launch day.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-ads"><figure><img src="assets/cards/card-05.webp" alt="" loading="lazy" /><b>A</b></figure><figure class="win"><img src="assets/cards/card-09.webp" alt="" loading="lazy" /><b>B</b><span>✓ winner</span></figure></div>
+            <span class="svc-n mono">06</span><h3>Ad creatives</h3><p>Hook variants and cut-downs for Meta, YouTube and performance testing.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-motion"><div class="kin"><span>M</span><span>O</span><span>T</span><span>I</span><span>O</span><span>N</span></div><svg viewBox="0 0 300 80" class="mpath"><path d="M0 40 C 50 0, 100 80, 150 40 S 250 0, 300 40" /></svg></div>
+            <span class="svc-n mono">07</span><h3>Animation &amp; motion</h3><p>Explainers and motion graphics that make complex products click.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-art art-film"><img src="https://i.ytimg.com/vi/fIbDWDh6aYw/hqdefault.jpg" alt="" loading="lazy" /><i class="lb t"></i><i class="lb b"></i><span class="tag mono">2.39 : 1</span></div>
+            <span class="svc-n mono">08</span><h3>Brand films</h3><p>Cinematic stories that make people feel your brand, not just see it.</p>
+          </article>
+        </div>
+        <div class="svc-progress"><i id="svcBar"></i></div>
+      </div>
+    </section>
+
+    <!-- 8 · REELS + VEX -->
+    <section class="reels" id="vex">
+      <div class="reels-copy">
+        <p class="eyebrow">Turn your product into reels</p>
+        <h2 class="split">One launch. <em class="serif grad-text">Fifty</em> ways to be seen.</h2>
+        <p>Every launch film is cut into hooks, teasers and platform-native reels — so launch week never runs out of content.</p>
+        <div class="vex glass" id="vexBox">
+          <div class="vex-head"><span class="vex-ava">V</span><div><b>Hey, I'm Vex</b><small>Ask me anything about your launch</small></div></div>
+          <div class="vex-log" id="vexLog" aria-live="polite"></div>
+          <div class="vex-qs" id="vexQs">
+            <button>How fast can I launch?</button>
+            <button>What formats do I get?</button>
+            <button>Do you do 3D renders?</button>
+          </div>
+        </div>
+      </div>
+      <div class="phone-stage">
+        <div class="phone" id="phone">
+          <div class="phone-screen">
+            <video id="reel" muted loop playsinline autoplay preload="auto" poster="assets/reel-poster.jpg">
+              <source src="assets/reel.mp4" type="video/mp4" />
+            </video>
+            <canvas id="reelFallback" width="540" height="1170"></canvas>
+          </div>
+          <div class="phone-notch"></div>
+        </div>
+        <div class="float-card fc1 glass" data-speed="-0.18"><span class="dot r"></span>Hook v3 <small>approved</small></div>
+        <div class="float-card fc2 glass" data-speed="0.14"><span class="spark">✦</span> Auto-captions on</div>
+        <div class="float-card fc3 glass" data-speed="-0.08"><span class="ok">✓</span> Exported 9:16 · 1:1 · 16:9</div>
+      </div>
+    </section>
+
+    <!-- 9 · COLLAB (interactive review editor) -->
+    <section class="collab" id="collab">
+      <div class="section-head">
+        <p class="eyebrow">Review together</p>
+        <h2 class="split">Frame-accurate feedback, <em class="serif grad-text">in real time.</em></h2>
+        <p class="lead">Try it — this is a live review room. Click the frame to drop a note, drag the playhead, resolve comments, approve the cut.</p>
+      </div>
+      <div class="editor glass" id="editor">
+        <div class="ed-bar">
+          <div class="ed-crumb"><span class="vx sm">VX</span><span class="muted">Nova launch</span><span class="muted">/</span><b>launch_film</b><span class="ver mono">v4</span></div>
+          <div class="ed-people">
+            <span class="ava" style="--c:#ff3d9a">A</span><span class="ava" style="--c:#8b5cff">R</span><span class="ava" style="--c:#2fd3a0">K</span><span class="ava you" style="--c:#ff7a2f">You</span>
+            <span class="live-dot"><i class="live"></i> 4 watching</span>
+          </div>
+          <button class="ed-approve" id="edApprove" type="button"><span class="ic">✓</span> <span class="lbl">Approve v4</span></button>
+        </div>
+        <div class="ed-main">
+          <div class="ed-stage" id="edStage">
+            <div class="ed-wrap" id="edWrap">
+              <video id="edVideo" src="assets/reel.mp4" poster="assets/reel-poster.jpg" muted loop playsinline preload="none"></video>
+              <div class="ed-pins" id="edPins"></div>
+              <div class="ed-safe" aria-hidden="true"></div>
+            </div>
+            <div class="ed-hint" id="edHint"><span class="tap-ring"></span> Click the frame to leave a note</div>
+            <div class="cursor c1" data-who="0"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z" /></svg><span>Aarav</span></div>
+            <div class="cursor c2" data-who="1"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z" /></svg><span>Riya</span></div>
+            <div class="cursor c3" data-who="2"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z" /></svg><span>Kabir</span></div>
+          </div>
+          <aside class="ed-side">
+            <div class="ed-tabs"><b>Comments <span id="edCount">0</span></b><span class="muted">Activity</span></div>
+            <ol class="ed-list" id="edList"></ol>
+            <form class="ed-form" id="edForm" autocomplete="off">
+              <span class="ed-at mono" id="edAt">00:00</span>
+              <input id="edInput" placeholder="Add a note at this frame…" maxlength="140" aria-label="Comment" />
+              <button type="submit" class="ed-send" aria-label="Post comment">↑</button>
+            </form>
+          </aside>
+        </div>
+        <div class="ed-transport">
+          <button class="ed-play" id="edPlay" type="button" aria-label="Play"><svg viewBox="0 0 24 24"><path class="i-play" d="M7 4l13 8-13 8z" /><g class="i-pause"><rect x="6" y="4" width="4" height="16" rx="1" /><rect x="14" y="4" width="4" height="16" rx="1" /></g></svg></button>
+          <span class="ed-time mono"><b id="edTime">00:00:00</b> / 00:00:15</span>
+          <div class="ed-timeline" id="edTimeline">
+            <div class="ed-strip"></div>
+            <div class="ed-wave" id="edWave"></div>
+            <div class="ed-markers" id="edMarkers"></div>
+            <div class="ed-head" id="edHead"><i></i></div>
+          </div>
+          <span class="ed-speed mono">1.0×</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · PROCESS (pinned, visual per step) -->
+    <section class="process" id="process">
+      <div class="proc-pin">
+        <div class="proc-left">
+          <p class="eyebrow">Designed to create possibilities</p>
+          <h2>How we create <em class="serif grad-text">magic.</em></h2>
+          <ol class="proc-steps" id="procSteps">
+            <li><span class="pn mono">01</span><div><h3>Concept &amp; script</h3><p>Scene-by-scene draft with dialogue and time-codes, built around one hook.</p></div></li>
+            <li><span class="pn mono">02</span><div><h3>Look &amp; storyboard</h3><p>AI engine selection, style frames and visual tests.</p></div></li>
+            <li><span class="pn mono">03</span><div><h3>AI production</h3><p>Motion tests and multi-variant generation, directed shot by shot.</p></div></li>
+            <li><span class="pn mono">04</span><div><h3>Post-production</h3><p>VFX, color grading and audio mixing to cinema standard.</p></div></li>
+            <li><span class="pn mono">05</span><div><h3>Master delivery</h3><p>Multi-format export and secure transfer, ready for launch day.</p></div></li>
+          </ol>
+        </div>
+        <div class="proc-stage glass" id="procStage">
+          <div class="ps-top mono"><span id="psLabel">01 · SCRIPT</span><span class="ps-dots"><i></i><i></i><i></i><i></i><i></i></span></div>
+          <div class="pv pv1">
+            <div class="doc mono" id="procDoc">
+              <p class="sh" data-t="SC 01 — INT. DARK STUDIO — NIGHT"></p>
+              <p data-t="A countdown ring ignites. 03… 02… 01."></p>
+              <p class="sh" data-t="SC 02 — THE REVEAL"></p>
+              <p data-t="The phone rises into frame. Light sweeps the glass."></p>
+              <p class="sup" data-t="SUPER: IT'S HERE."></p>
+              <p class="sh" data-t="SC 03 — EVERY CATEGORY"></p>
+              <p data-t="Serum. Earbuds. Can. One beat each — then all of them."></p>
+            </div>
+          </div>
+          <div class="pv pv2">
+            <div class="board">
+              <figure><img src="assets/frames/f_1.3.jpg" alt="" loading="lazy" /><figcaption>01 · Countdown</figcaption></figure>
+              <figure><img src="assets/frames/f_3.9.jpg" alt="" loading="lazy" /><figcaption>02 · Reveal</figcaption></figure>
+              <figure><img src="assets/frames/f_6.4.jpg" alt="" loading="lazy" /><figcaption>03 · Beauty</figcaption></figure>
+              <figure><img src="assets/frames/f_8.8.jpg" alt="" loading="lazy" /><figcaption>04 · Range</figcaption></figure>
+              <figure><img src="assets/frames/f_10.2.jpg" alt="" loading="lazy" /><figcaption>05 · Formats</figcaption></figure>
+              <figure><img src="assets/frames/f_13.9.jpg" alt="" loading="lazy" /><figcaption>06 · Lockup</figcaption></figure>
+            </div>
+          </div>
+          <div class="pv pv3">
+            <div class="gen">
+              <figure><img src="assets/cards/card-03.webp" alt="" loading="lazy" /><span class="mono">v1</span></figure>
+              <figure><img src="assets/cards/card-07.webp" alt="" loading="lazy" /><span class="mono">v2</span></figure>
+              <figure class="pick"><img src="assets/cards/card-11.webp" alt="" loading="lazy" /><span class="mono">v3 ✓ selected</span></figure>
+              <figure><img src="assets/cards/card-15.webp" alt="" loading="lazy" /><span class="mono">v4</span></figure>
+            </div>
+            <div class="gen-bar mono"><span>Generating variants</span><i><b id="genBar"></b></i></div>
+          </div>
+          <div class="pv pv4">
+            <div class="grade" id="grade">
+              <img src="assets/frames/f_7.6.jpg" alt="" loading="lazy" />
+              <div class="grade-raw" id="gradeRaw"><img src="assets/frames/f_7.6.jpg" alt="" loading="lazy" /></div>
+              <div class="grade-line" id="gradeLine"><i></i></div>
+              <span class="g-l mono">LOG</span><span class="g-r mono">GRADED · EMBER LUT</span>
+            </div>
+            <div class="mixer" id="mixer"></div>
+          </div>
+          <div class="pv pv5">
+            <div class="deliver">
+              <figure class="d916"><img src="assets/frames/f_3.9.jpg" alt="" loading="lazy" /><b class="mono">9:16</b><i>✓</i></figure>
+              <figure class="d11"><img src="assets/frames/f_3.9.jpg" alt="" loading="lazy" /><b class="mono">1:1</b><i>✓</i></figure>
+              <figure class="d169"><img src="assets/frames/f_3.9.jpg" alt="" loading="lazy" /><b class="mono">16:9</b><i>✓</i></figure>
+            </div>
+            <div class="toast glass"><span class="ok">✓</span> Masters delivered · secure transfer</div>
+          </div>
+          <div class="ps-progress"><i id="procBar"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · PLATFORMS -->
+    <section class="platforms" id="platforms">
+      <div class="plat-head">
+        <p class="eyebrow">Made for every feed</p>
+        <h2>Cut for <span class="plat-ticker" id="platTicker"><span>Reels.</span><span>Shorts.</span><span>TikTok.</span><span>LinkedIn.</span><span>YouTube.</span><span>your ads.</span></span></h2>
+      </div>
+      <div class="mrow" id="mrow1"><div class="mtrack">
+        <span class="pp"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r="1" class="f" /></svg>Instagram Reels<em>9:16</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" /><path d="M10 9l5 3-5 3z" class="f" /></svg>YouTube<em>16:9</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" /><path d="M10 9l5 3-5 3z" class="f" /></svg>Shorts<em>9:16</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><path d="M14 3v11a3.5 3.5 0 1 1-3-3.5M14 3c.5 2.5 2.3 4 5 4.3" /></svg>TikTok<em>9:16</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 10v7M8 7v.01M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7" /></svg>LinkedIn<em>1:1</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" /></svg>X<em>16:9</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><path d="M3 12c3-8 6-8 9 0s6 8 9 0" /></svg>Meta Ads<em>4:5</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6L20 9.5l-4 4 1 5.8-5-2.8-5 2.8 1-5.8-4-4 5.4-.9z" /></svg>Product Hunt<em>16:9</em></span>
+        <span class="pp"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>Website hero<em>21:9</em></span>
+      </div></div>
+      <div class="mrow rev" id="mrow2"><div class="mtrack thumbs">
+        <img src="assets/cards/card-00.webp" alt="" loading="lazy" /><img src="assets/cards/card-05.webp" alt="" loading="lazy" /><img src="assets/cards/card-10.webp" alt="" loading="lazy" /><img src="assets/cards/card-03.webp" alt="" loading="lazy" /><img src="assets/cards/card-14.webp" alt="" loading="lazy" /><img src="assets/cards/card-09.webp" alt="" loading="lazy" /><img src="assets/cards/card-16.webp" alt="" loading="lazy" /><img src="assets/cards/card-07.webp" alt="" loading="lazy" /><img src="assets/cards/card-12.webp" alt="" loading="lazy" />
+      </div></div>
+    </section>
+
+    <!-- 12 · VISION -->
+    <section class="vision" id="vision">
+      <div class="section-head">
+        <p class="eyebrow">Why now</p>
+        <h2 class="split">Launches are won <em class="serif grad-text">in the feed.</em></h2>
+      </div>
+      <div class="vision-grid">
+        <article class="vcard spot">
+          <div class="vviz v-crew" id="vCrew"></div>
+          <span class="vnum">I</span>
+          <h3>Crew to team</h3>
+          <p>AI is transforming production — what took a crew and a month now takes a focused team and a week.</p>
+        </article>
+        <article class="vcard spot">
+          <div class="vviz v-feed"><div class="feed"><img src="assets/cards/card-02.webp" alt="" loading="lazy" /><img src="assets/cards/card-08.webp" alt="" loading="lazy" /><img src="assets/cards/card-13.webp" alt="" loading="lazy" /><img src="assets/cards/card-02.webp" alt="" loading="lazy" /></div><div class="sec"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" /><circle cx="22" cy="22" r="19" class="p" /></svg><b class="mono">1s</b></div></div>
+          <span class="vnum">II</span>
+          <h3>The first second</h3>
+          <p>Attention lives in the feed now. A launch is won or lost in the first second of a reel.</p>
+        </article>
+        <article class="vcard spot">
+          <div class="vviz v-day"><i class="f a"></i><i class="f b"></i><i class="f c"></i><span class="mono">DAY 1</span></div>
+          <span class="vnum">III</span>
+          <h3>Every format, day one</h3>
+          <p>The brands that win launch with a story in every format on day one. That is what we build.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 13 · CONTACT (3D finale returns behind) -->
+    <section class="final" id="contact">
+      <div class="beams" aria-hidden="true"><i class="bm l"></i><i class="bm r"></i></div>
+      <p class="eyebrow center">Let's create together</p>
+      <h2 class="final-title" id="finalTitle"><span>Ready</span> <span>to</span> <span>light</span> <span>up</span> <em class="serif grad-text">the screen?</em></h2>
+      <p class="final-sub">Book a free 30-minute discovery call. Bring the product — we'll bring the launch plan.</p>
+      <form class="contact glass" id="contactForm" autocomplete="on">
+        <div class="cf-step">
+          <span class="cf-label">What are you launching?</span>
+          <div class="chips" id="cfCat" role="radiogroup">
+            <button type="button" class="chip on" data-cat="phone">Gadget</button>
+            <button type="button" class="chip" data-cat="bottle">Beauty</button>
+            <button type="button" class="chip" data-cat="buds">Audio</button>
+            <button type="button" class="chip" data-cat="can">Beverage</button>
+            <button type="button" class="chip">App / SaaS</button>
+            <button type="button" class="chip">Something else</button>
+          </div>
+        </div>
+        <div class="cf-step">
+          <span class="cf-label">Where will it launch?</span>
+          <div class="chips multi" id="cfPlat">
+            <button type="button" class="chip on">Instagram</button><button type="button" class="chip">YouTube</button><button type="button" class="chip">TikTok</button><button type="button" class="chip">LinkedIn</button><button type="button" class="chip">Ads</button><button type="button" class="chip">Website</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>Name<input name="name" autocomplete="name" required /></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+          <label>Launch date<input name="date" type="date" /></label>
+        </div>
+        <button class="btn btn-primary btn-lg launch-btn magnetic" type="submit"><span class="lb-txt">Launch my project</span><span class="rocket">🚀</span></button>
+        <div class="cf-done" id="cfDone" hidden>
+          <div class="cf-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" /></svg><b class="mono" id="cfNum">03</b></div>
+          <h3>You're on the launch list.</h3>
+          <p class="muted">Thanks — we'll be in touch to book your discovery call.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-cols">
+      <div><a class="brand" href="#top"><span class="vx">VX</span><span>ViralX</span></a><p class="muted">The launch-video studio for products that deserve attention.</p></div>
+      <div><h4>Services</h4><a href="#services">Launch films</a><a href="#services">AI video</a><a href="#services">3D renders</a><a href="#services">Reels &amp; branding</a></div>
+      <div><h4>Studio</h4><a href="#engine">LaunchOS</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">ViralX</div>
+    <p class="muted small">© 2026 ViralX · viralx.in</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

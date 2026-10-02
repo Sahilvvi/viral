@@ -1,0 +1,8 @@
+export/
+export.html
+js/export.js
+server.py
+__pycache__/
+.env*
+.vercel/
+.gitignore
