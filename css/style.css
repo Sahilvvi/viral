@@ -56,7 +56,7 @@ section { position: relative; z-index: 2; }
 .loader-count { font-family: var(--mono); color: var(--muted); font-size: 13px; }
 .loader-bar { width: 200px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
 .loader-bar i { display: block; height: 100%; width: 0; background: var(--grad); }
-.vx { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, #ff5a3d, #ff2d3d 55%, #d81b6a); font-weight: 900; font-size: 14px; letter-spacing: -.04em; color: #fff; box-shadow: 0 6px 24px -6px rgba(255, 45, 61, .7); }
+.vx { display: inline-block; width: 34px; height: 34px; border-radius: 10px; background: url('../favicon.svg') center / cover no-repeat; box-shadow: 0 6px 24px -6px rgba(255, 45, 61, .7); flex: none; }
 
 /* ------------------------------------------------ announce + nav */
 .announce { position: relative; z-index: 30; text-align: center; font-size: 13px; padding: 9px var(--pad); background: linear-gradient(90deg, #5a0f22, #8a1530 50%, #4a1060); color: #ffe3e6; }
@@ -251,7 +251,7 @@ section { position: relative; z-index: 2; }
 @keyframes ping { from { transform: scale(.9); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
 .play-big:hover { transform: scale(1.12); }
 .tap-ring { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 0 rgba(255, 45, 61, .7); animation: pulseR 1.6s infinite; flex: none; }
-.vx.sm { width: 26px; height: 26px; border-radius: 8px; font-size: 11px; }
+.vx.sm { width: 26px; height: 26px; border-radius: 8px; }
 .spot { --mx: 50%; --my: 50%; }
 .spot::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255, 77, 93, .16), transparent 60%); opacity: 0; transition: opacity .4s; z-index: 0; }
 .spot:hover::before { opacity: 1; }
