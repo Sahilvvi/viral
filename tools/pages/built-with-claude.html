@@ -1,0 +1,59 @@
+<!--
+title: Built with Claude — How ViralX uses Anthropic's Claude
+description: How ViralX uses Anthropic's Claude today to build its site, tooling and launch pipeline, and where Claude fits into LaunchOS next.
+nav: claude
+head: <meta name="robots" content="noindex" />
+-->
+    <section class="p-hero wrap claude-hero">
+      <span class="mark rv"><i><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg></i>ViralX × Anthropic</span>
+      <h1 class="rv" style="--d:1">Built with <em class="serif grad-text">Claude.</em></h1>
+      <p class="lede rv" style="--d:2">Claude is part of how a small studio ships cinema-level launch content at the speed the internet moves. This page is an honest account of where we use it today and where it goes next.</p>
+    </section>
+
+    <section class="wrap sec" style="padding-top:0">
+      <div class="sec-head"><h2 class="rv">Where Claude helps us</h2><p class="rv"><b style="color:#8ff0b6">●</b> in use today &nbsp; <b>○</b> planned</p></div>
+      <div class="uses">
+        <article class="use now rv"><div class="k">In use today</div><h3>Building this website</h3><p>The 3D scroll experience, interactive sections and this multi-page site were written and iterated with Claude Code. One person ships what used to take a front-end team.</p></article>
+        <article class="use now rv" style="--d:1"><div class="k">In use today</div><h3>Motion and reel pipeline</h3><p>Our launch reels are authored as code (HTML, GSAP, Three.js) and rendered to video. Claude Code writes and debugs these compositions, so changing a model or a caption is an edit, not a rebuild.</p></article>
+        <article class="use now rv" style="--d:2"><div class="k">In use today</div><h3>Scripts, hooks and copy</h3><p>Claude drafts hook alternates, scene-by-scene scripts with time-codes and platform captions, which our directors then shape into the final voice.</p></article>
+        <article class="use next rv"><div class="k">Planned</div><h3>Vex, our launch assistant</h3><p>The “Ask Vex” widget on our homepage answers from a short scripted FAQ today. We plan to power it with the Claude API so prospects get real answers about formats, timelines and scope, grounded in our own pricing and process docs.</p></article>
+        <article class="use next rv" style="--d:1"><div class="k">Planned</div><h3>Brief-to-plan intake</h3><p>When a client submits a brief in the portal, Claude would read it and draft a first launch plan (hook ideas, format map, shot list) for a producer to review before the discovery call.</p></article>
+        <article class="use next rv" style="--d:2"><div class="k">Planned</div><h3>Review-room summaries</h3><p>Condense frame-accurate feedback from a review room into a clean list of revisions per cut, so rounds of changes stay short and unambiguous.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap sec">
+      <div class="sec-head"><h2 class="rv">Where it sits in LaunchOS</h2><p class="rv">Claude handles language and code. Humans direct the film. Specialised video, 3D and audio tools do the picture and sound.</p></div>
+      <div class="pipeline rv">
+        <div><b>01</b><h4>Concept &amp; script</h4><p>Hook alternates, scene-by-scene scripts, time-codes.</p><div class="who">Claude drafts · Director decides</div></div>
+        <div><b>02</b><h4>Look &amp; storyboard</h4><p>Style frames and visual tests.</p><div class="who">Image / video models · Director decides</div></div>
+        <div><b>03</b><h4>Production</h4><p>3D renders, generative shots, motion graphics as code.</p><div class="who">3D + video tools · Claude Code for the code</div></div>
+        <div><b>04</b><h4>Post</h4><p>Edit, grade, captions, sound mix.</p><div class="who">Editors · Claude for captions and assembly scripts</div></div>
+        <div><b>05</b><h4>Delivery &amp; support</h4><p>Master pack, client portal, Q&amp;A.</p><div class="who">Claude API (planned) for client Q&amp;A</div></div>
+      </div>
+    </section>
+
+    <section class="wrap narrow sec">
+      <div class="sec-head"><h2 class="rv">What it looks like in practice</h2></div>
+      <p class="muted rv" style="margin-bottom:18px">A reel is a composition written as code. This is the shape of the work Claude Code does for us when a client wants a change like “make the hook land half a second sooner.”</p>
+      <pre class="codeblock rv"><span class="c">// launch-reel / scene 02 — reveal</span>
+<span class="k">const</span> tl = gsap.timeline({ paused: <span class="k">true</span> });
+tl.from(<span class="s">"#product"</span>, { scale: <span class="k">0.6</span>, opacity: <span class="k">0</span>, duration: <span class="k">0.5</span>, ease: <span class="s">"expo.out"</span> }, <span class="k">0.0</span>)   <span class="c">// was 0.5s: hook lands sooner</span>
+  .from(<span class="s">".caption"</span>, { yPercent: <span class="k">40</span>, opacity: <span class="k">0</span>, stagger: <span class="k">0.08</span> }, <span class="k">0.2</span>);</pre>
+    </section>
+
+    <section class="wrap narrow sec">
+      <div class="sec-head"><h2 class="rv">How we’ll use it responsibly</h2></div>
+      <div class="faq rv">
+        <details open><summary>Do you pass client work through Claude?</summary><p>Client briefs and unreleased products are confidential. Any Claude API use on client material will follow the data terms agreed with the client and Anthropic’s usage policies, and we’ll say so in the project scope.</p></details>
+        <details><summary>Is the final film written by AI?</summary><p>No. Claude helps with drafts and code. A director decides what ships, and every shot is human-directed.</p></details>
+        <details><summary>Will you tell clients where AI is used?</summary><p>Yes. Every package lists where generative tools are used, and clients can ask for a plain-language breakdown of the pipeline for their project.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-band rv">
+      <h2>See what a launch <em class="serif grad-text">looks like.</em></h2>
+      <p>Browse the work or book a free discovery call.</p>
+      <div class="actions"><a class="btn btn-primary" href="/discover/">Browse the work</a><a class="btn btn-ghost" href="/contact/">Book a call</a></div>
+      <p class="disclaimer" style="margin-top:26px">ViralX is an independent studio. “Claude” and “Anthropic” are trademarks of Anthropic, PBC. This page describes our use of the products and does not imply endorsement.</p>
+    </section>

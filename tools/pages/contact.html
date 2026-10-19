@@ -1,0 +1,58 @@
+<!--
+title: Contact ViralX — Book a free discovery call
+description: Talk to ViralX about your product launch. Book a free 30-minute discovery call, ask a question or send a brief. We reply within one working day.
+nav: contact
+-->
+    <section class="p-hero wrap">
+      <p class="eyebrow center">Contact</p>
+      <h1 class="rv">Bring the product. <em class="serif grad-text">We’ll bring the plan.</em></h1>
+      <p class="lede rv" style="--d:1">Book a free 30-minute discovery call or send a brief. We reply within one working day.</p>
+    </section>
+
+    <section class="wrap sec" style="padding-top:0">
+      <div class="contact-grid">
+        <div class="info-list rv">
+          <a href="mailto:{{site.email}}"><span class="ic">✉</span><span><small>Email</small>{{site.email}}</span></a>
+          <a href="mailto:{{site.support_email}}"><span class="ic">?</span><span><small>Support for existing clients</small>{{site.support_email}}</span></a>
+          <a href="tel:{{site.phone}}"><span class="ic">☎</span><span><small>Phone / WhatsApp</small>{{site.phone}}</span></a>
+          <div><span class="ic">◉</span><span><small>Studio</small>{{site.address}}</span></div>
+          <div><span class="ic">◷</span><span><small>Hours</small>{{site.hours}}</span></div>
+        </div>
+
+        <div class="panel rv" style="--d:1">
+          <form class="form" id="contactPageForm" novalidate>
+            <div class="field"><span>What are you launching?</span>
+              <div class="chips pick" data-group="category">
+                <button type="button" class="chip on">Gadget</button><button type="button" class="chip">Beauty</button><button type="button" class="chip">Audio</button><button type="button" class="chip">Beverage</button><button type="button" class="chip">App / SaaS</button><button type="button" class="chip">Something else</button>
+              </div></div>
+            <div class="field"><span>Where will it launch?</span>
+              <div class="chips pick" data-group="platforms" data-multi="1">
+                <button type="button" class="chip on">Instagram</button><button type="button" class="chip">YouTube</button><button type="button" class="chip">TikTok</button><button type="button" class="chip">LinkedIn</button><button type="button" class="chip">Ads</button><button type="button" class="chip">Website</button>
+              </div></div>
+            <div class="row2">
+              <label class="field">Name<input name="name" autocomplete="name" required maxlength="200" /></label>
+              <label class="field">Email<input name="email" type="email" autocomplete="email" required /></label>
+            </div>
+            <div class="row2">
+              <label class="field">Company<input name="company" autocomplete="organization" maxlength="200" /></label>
+              <label class="field">Launch date<input name="launch_date" type="date" /></label>
+            </div>
+            <label class="field">Budget range
+              <select name="budget"><option value="">Not sure yet</option><option>Under ₹50,000</option><option>₹50,000 – ₹1,50,000</option><option>₹1,50,000 – ₹5,00,000</option><option>₹5,00,000+</option><option>International (USD)</option></select></label>
+            <label class="field">Tell us about the launch<textarea name="message" maxlength="5000" placeholder="The product, the audience, anything you've seen that you like…"></textarea></label>
+            <label class="check"><input type="checkbox" required /> <span>I agree to be contacted about this enquiry. See the <a href="/privacy/">Privacy Policy</a>.</span></label>
+            <button class="btn btn-primary btn-lg" type="submit">Send my brief</button>
+            <div class="form-msg" id="contactMsg" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap narrow sec">
+      <div class="sec-head"><h2 class="rv">Before you write</h2></div>
+      <div class="faq rv">
+        <details><summary>How fast will you reply?</summary><p>Within one working day, usually sooner. If you gave a launch date, we reply with a plan against that date.</p></details>
+        <details><summary>Is the first call really free?</summary><p>Yes. The 30-minute discovery call is free and has no commitment. We’ll tell you honestly if we’re not the right fit.</p></details>
+        <details><summary>I’m an existing client. Where do I check my project?</summary><p>Sign in to your <a class="link" href="/login/">client portal</a> to see the status of every launch.</p></details>
+      </div>
+    </section>

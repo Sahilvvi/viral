@@ -7,3 +7,6 @@ __pycache__/
 .vercel/
 .gitignore
 _tmp/
+tools/
+supabase/
+.claude/

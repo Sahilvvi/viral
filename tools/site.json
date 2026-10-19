@@ -1,0 +1,21 @@
+{
+  "_note": "Company details used in every header/footer and on Contact/About/legal pages. DUMMY values marked FILL must be replaced with real ones, then re-run: python tools/build_pages.py",
+  "name": "ViralX",
+  "legal_name": "ViralX Studio",
+  "domain": "https://www.viralx.in",
+  "email": "hello@viralx.in",
+  "support_email": "support@viralx.in",
+  "privacy_email": "privacy@viralx.in",
+  "phone": "+91 98765 43210",
+  "city": "Bengaluru, India",
+  "address": "ViralX Studio, Bengaluru, Karnataka, India",
+  "hours": "Mon–Sat, 10:00–19:00 IST",
+  "gstin": "",
+  "socials": {
+    "instagram": "https://www.instagram.com/viralx.in",
+    "linkedin": "https://www.linkedin.com/company/viralx-in",
+    "x": "https://x.com/viralx_in",
+    "youtube": "https://www.youtube.com/@viralx_in"
+  },
+  "legal_updated": "8 October 2026"
+}

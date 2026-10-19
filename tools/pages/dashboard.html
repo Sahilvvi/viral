@@ -1,0 +1,66 @@
+<!--
+title: Client portal — ViralX
+description: Your ViralX launch projects, briefs and account.
+scripts: /js/dashboard.js
+noindex: 1
+-->
+    <div class="wrap">
+      <div class="form-msg err setup-note" id="setupNote" hidden style="margin-top:30px">The client portal is being set up. Email <a class="link" href="mailto:{{site.email}}">{{site.email}}</a> for project updates.</div>
+      <div class="dash" id="dashApp">
+        <aside class="dash-nav">
+          <div class="dash-user"><span class="av" id="userAv">V</span><div><b id="userName">…</b><small id="userEmail"></small></div></div>
+          <button class="on" data-tab="paneProjects" type="button">Projects</button>
+          <button data-tab="paneAccount" type="button">Account</button>
+          <a href="/contact/">Contact the studio</a>
+          <button data-signout type="button">Sign out</button>
+        </aside>
+
+        <div>
+          <div class="callout" id="welcome" hidden style="margin-bottom:18px"><strong>Welcome to ViralX.</strong> Start your first launch brief below and we’ll reply within one working day.</div>
+
+          <section class="dash-pane" id="paneProjects">
+            <div class="dash-head"><div><p class="eyebrow">Client portal</p><h1>Hi, <span id="dashName">there</span>.</h1></div><button class="btn btn-primary" data-new type="button">+ New launch brief</button></div>
+            <div class="kpis">
+              <div class="kpi"><b id="kTotal">0</b><span>Projects</span></div>
+              <div class="kpi"><b id="kProd">0</b><span>In production</span></div>
+              <div class="kpi"><b id="kDone">0</b><span>Delivered</span></div>
+              <div class="kpi"><b id="kNext">—</b><span>Next launch</span></div>
+            </div>
+            <div class="proj-list" id="projList"><div class="empty"><p>Loading…</p></div></div>
+          </section>
+
+          <section class="dash-pane" id="paneAccount" hidden>
+            <div class="dash-head"><div><p class="eyebrow">Account</p><h2>Your details</h2></div></div>
+            <div class="panel" style="max-width:560px">
+              <form class="form" id="acctForm">
+                <label class="field">Email<input id="acctEmail" disabled /></label>
+                <label class="field">Full name<input id="acctName" maxlength="120" /></label>
+                <label class="field">Company<input id="acctCompany" maxlength="120" /></label>
+                <button class="btn btn-primary" type="submit">Save</button>
+                <div class="form-msg" id="acctMsg" role="status"></div>
+              </form>
+              <p class="muted small" style="margin-top:18px">To delete your account and data, see <a class="link" href="/data-deletion/">Data deletion</a>.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="briefModal" hidden role="dialog" aria-modal="true" aria-labelledby="briefTitle">
+      <div class="panel">
+        <div class="dash-head" style="margin-bottom:16px"><h2 id="briefTitle" style="font-size:30px">New launch brief</h2><button class="btn btn-ghost btn-sm" data-close type="button">Close</button></div>
+        <form class="form" id="briefForm" novalidate>
+          <label class="field">Project name<input name="title" required maxlength="160" placeholder="e.g. Nova X launch film" /></label>
+          <div class="field"><span>Category</span><div class="chips pick" data-group="category"><button type="button" class="chip on">Gadget</button><button type="button" class="chip">Beauty</button><button type="button" class="chip">Audio</button><button type="button" class="chip">Beverage</button><button type="button" class="chip">App / SaaS</button><button type="button" class="chip">Other</button></div></div>
+          <div class="field"><span>Formats</span><div class="chips pick" data-group="formats" data-multi="1"><button type="button" class="chip on">9:16</button><button type="button" class="chip">1:1</button><button type="button" class="chip on">16:9</button><button type="button" class="chip">4:5</button><button type="button" class="chip">21:9</button></div></div>
+          <div class="row2">
+            <label class="field">Package<select name="package"><option value="">Not sure yet</option><option>Launch Reel</option><option>Launch Film</option><option>LaunchOS Campaign</option></select></label>
+            <label class="field">Launch date<input name="launch_date" type="date" /></label>
+          </div>
+          <label class="field">The brief<textarea name="brief" required maxlength="8000" placeholder="What are you launching, who is it for, and what should people feel?"></textarea></label>
+          <label class="field">Reference links <span class="muted">(optional)</span><input name="links" maxlength="500" placeholder="Videos, photos, CAD files or folders" /></label>
+          <button class="btn btn-primary btn-lg" type="submit">Submit brief</button>
+          <div class="form-msg" id="briefMsg" role="status"></div>
+        </form>
+      </div>
+    </div>

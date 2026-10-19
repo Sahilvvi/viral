@@ -1,3 +1,4 @@
+import { saveLead } from './supabase.js';
 // Lower-page choreography: work stack, services coverflow, live review room, process stage,
 // platform marquees, vision cards and the launch form. Called once from main.js after fonts load.
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
@@ -398,7 +399,14 @@ function finalFX(setCat) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
-    // TODO(go-live): send the form (name, email, date, category, platforms) to the booking tool / inbox.
+    const fd = new FormData(form);
+    const lead = {
+      name: fd.get('name'), email: fd.get('email'), launch_date: fd.get('date') || null,
+      category: document.querySelector('#cfCat .chip.on')?.textContent || null,
+      platforms: [...document.querySelectorAll('#cfPlat .chip.on')].map((c) => c.textContent),
+      source: 'home-launch-form',
+    };
+    saveLead(lead, { mailtoFallback: false }).catch((err) => console.warn('lead not saved', err));
     const done = document.getElementById('cfDone'), num = document.getElementById('cfNum');
     gsap.timeline()
       .to('.launch-btn .rocket', { x: 260, y: -220, rotation: -20, opacity: 0, duration: .7, ease: 'power3.in' })
